@@ -139,9 +139,6 @@ lam = lambda { puts "Hello World" }
 lam.call
 ```
 
-##Closures?
-* A function passed into another function
-
 ## Resources
 
 * [Understanding Ruby blocks, Procs, and methods](http://eli.thegreenplace.net/2006/04/18/understanding-ruby-blocks-procs-and-methods/)
