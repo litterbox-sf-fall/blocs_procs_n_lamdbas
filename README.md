@@ -141,3 +141,9 @@ lam.call
 
 ##Closures?
 * A function passed into another function
+
+## Resources
+
+* [Understanding Ruby blocks, Procs, and methods](http://eli.thegreenplace.net/2006/04/18/understanding-ruby-blocks-procs-and-methods/)
+* [Ruby & (Ampersand) Parameter Demystified](http://www.skorks.com/2013/04/ruby-ampersand-parameter-demystified/)
+* [Going crazy with to_proc](http://iain.nl/going-crazy-with-to_proc)
