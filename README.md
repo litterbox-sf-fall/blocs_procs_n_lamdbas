@@ -23,6 +23,21 @@ Clearly we need another way to do this. As a result we have to find a way to pas
 end
 ```
 
+```
+def calculator(num1, num2, &callback)
+  callback.call(num1, num2)
+end
+
+# ... is the same as ...
+
+def calculator(num1, num2)
+  yield(num1, num2)
+end
+
+# Both will output the number 50
+calculator(5, 10) { |a, b| a * b }
+```
+
 ##Blocks vs Procs
 * Exactly the same, except...
 * Blocks can't be stored in variables; however, procs can!
