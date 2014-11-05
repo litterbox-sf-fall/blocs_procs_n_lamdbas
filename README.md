@@ -1,15 +1,16 @@
 #Procs, Blocks, and Lamdas
 
 ##Intro
-In javascript we were creating functions which we could pass in as arguments. In ruby we can do that as well.
+In JavaScript we were creating functions which we could pass in as arguments. In Ruby we can do that as well.
 
 ```
 def one
 	return 1
 end
 ```
-Let say we want to pass in the above function `one` to another function.
-If we say `x = one` x will not be equal to a method, but rather the value 1. `x.class => Fixnum < Integer`
+Let's say we want to pass in the above function `one` to another function.
+If we say `x = one`, x will not be equal to a method, but rather the
+value 1. Remember, in Ruby this is equivalent to `x = one()`.
 
 Clearly we need another way to do this. As a result we have to find a way to pass in a block a code. What is a block though?
 
