@@ -17,7 +17,7 @@ Clearly we need another way to do this. As a result we have to find a way to pas
 ## Block Examples
 
 ```
-[1,2,3].each { |x| puts x*2 }   # block is in between the curly braces
+[1,2,3].each { |x| puts x*2 } # block is in between the curly braces
 
 [1,2,3].each do |x|
   puts x*2                    # block is everything between the do and end
@@ -53,7 +53,7 @@ calculator(5, 10) { |a, b| a * b }
 
 ##Blocks vs Procs
 * Exactly the same, except...
-* Blocks can't be stored in variables; however, procs can!
+* Blocks can't be stored in variables; however, Procs can!
 
 ##Procs Examples
 
@@ -87,7 +87,6 @@ Back to our calculator example.  How would that look with `Proc`s?
 # Note that the callback does not have an `&` in front of it (because
 # it is a Proc, not a block).
 def calculator(num1, num2, callback)
-  # Procs must be run with .call
   callback.call(num1, num2)
 end
 
