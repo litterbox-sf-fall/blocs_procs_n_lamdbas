@@ -116,12 +116,12 @@ calculator(10, 5, &sub)
 ###Extra Credit
 
 ##Procs vs Lambdas
-* Lamda's are a different 'flavor' of a vanilla proc
-* Lambdas check the number of arguments, while procs do not
-	* Procs will drop any extra arguments; lambda will throw an error
-* Lambdas and procs treat the ‘return’ keyword differently
-	* ‘return’ inside of a lambda triggers the code right outside of the lambda code
-	* ‘return’ inside of a proc triggers the code outside of the method where the proc is being executed
+* Lambdas are a different 'flavor' of a vanilla Proc.
+* Lambdas check the number of arguments, while Procs do not.
+	* Procs will drop any extra arguments; lambda will throw an error.
+* Lambdas and Procs treat the ‘return’ keyword differently:
+	* ‘return’ inside of a lambda exits the lambda.
+	* ‘return’ inside of a Proc exits the method containing the Proc.
 
 ## Lambda Examples 
 ```           
