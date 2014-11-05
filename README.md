@@ -6,7 +6,7 @@
 * Write methods that take blocks as arguments
 * Write methods using yield
 * Define Procs
-*  and lambdas?
+    *  and lambdas?
 
 ##Intro
 In JavaScript we were creating functions which we could pass in as arguments. In Ruby we can do that as well.
