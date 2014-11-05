@@ -24,18 +24,30 @@ Clearly we need another way to do this. As a result we have to find a way to pas
 end
 ```
 
+What about the calculator we wrote the other day?  It would be nice if
+we could pass two numbers and the operation to perform on them.
+
 ```
+# The & signifies that the third argument will be a block.
 def calculator(num1, num2, &callback)
   callback.call(num1, num2)
 end
 
-# ... is the same as ...
+# Outputs 50
+calculator(5, 10) { |a, b| a * b }
+```
 
+But that `&` syntax is kind of ugly.  I thought Ruby was supposed to
+be clean? Enter the `yield` statement.
+
+```
+# The block does not need to be specified in the parameter list,
+# but can be called with the `yield` statement.
 def calculator(num1, num2)
   yield(num1, num2)
 end
 
-# Both will output the number 50
+# Will also output 50
 calculator(5, 10) { |a, b| a * b }
 ```
 
@@ -68,31 +80,36 @@ proc = Proc.new { puts "Hello World" }
 proc.call                     # The body of the Proc object gets executed when called
 ```
 
+Back to our calculator example.  How would that look with `Proc`s?
+
 ```
-# define a calculator function that takes two numbers and a callback
+# Define a calculator function that takes two numbers and a callback.
+# Note that the callback does not have an `&` in front of it (because
+# it is a Proc, not a block).
 def calculator(num1, num2, callback)
+  # Procs must be run with .call
   callback.call(num1, num2)
 end
 
-# define a Proc that substracts two numbers
+# Define a Proc that substracts two numbers.
 sub = Proc.new {|a, b| a - b}
 
-# return 5, since sub is called with 10 and 5
+# Returns 5, since sub is called with 10 and 5.
 calculator(10, 5, sub)
 ```
 
 ```
-# define a calculator function that takes two numbers
+# Define a calculator function that takes two numbers.
 def calculator(num1, num2)
-  # yield calls the hidden block argument
+  # yield calls the hidden block argument.
   yield(num1, num2)
 end
 
-# define a Proc that substracts two numbers
+# Define a Proc that substracts two numbers.
 sub = Proc.new {|a, b| a - b}
 
-# return 5, since sub is called with 10 and 5
-# need to use & to convert Proc to block since it's a hidden 3rd argument
+# Returns 5, since sub is called with 10 and 5.
+# Need to use & to convert Proc to block.
 calculator(10, 5, &sub)
 ```
 
