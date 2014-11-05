@@ -67,6 +67,34 @@ proc = Proc.new { puts "Hello World" }
 proc.call                     # The body of the Proc object gets executed when called
 ```
 
+```
+# define a calculator function that takes two numbers and a callback
+def calculator(num1, num2, callback)
+  callback.call(num1, num2)
+end
+
+# define a Proc that substracts two numbers
+sub = Proc.new {|a, b| a - b}
+
+# return 5, since sub is called with 10 and 5
+calculator(10, 5, sub)
+```
+
+```
+# define a calculator function that takes two numbers
+def calculator(num1, num2)
+  # yield calls the hidden block argument
+  yield(num1, num2)
+end
+
+# define a Proc that substracts two numbers
+sub = Proc.new {|a, b| a - b}
+
+# return 5, since sub is called with 10 and 5
+# need to use & to convert Proc to block since it's a hidden 3rd argument
+calculator(10, 5, &sub)
+```
+
 ###Extra Credit
 
 ##Procs vs Lambdas
