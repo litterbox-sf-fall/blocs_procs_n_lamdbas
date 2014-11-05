@@ -58,13 +58,13 @@ calculator(5, 10) { |a, b| a * b }
 ##Procs Examples
 
 ```
-fact = Proc.new{|n| n * n }
+fact = Proc.new {|n| n * n }
 multiply = Proc.new {|x, y| x * y }
 ```
 
 ```
 p fact.call(3)               #=>This will invoke ‘fact’ Proc and return 9
-p multiply.call(4, 3)           #=>This will invoke ‘multiply’ Proc and return 12
+p multiply.call(4, 3)        #=>This will invoke ‘multiply’ Proc and return 12
 ```
 
 ```
@@ -123,14 +123,14 @@ calculator(10, 5, &sub)
 	* ‘return’ inside of a lambda exits the lambda.
 	* ‘return’ inside of a Proc exits the method containing the Proc.
 
-## Lambda Examples 
-```           
+## Lambda Examples
+```
 lam = lambda { |x| puts x*2 }
 [1,2,3].each(&lam)
 
 lam = lambda { puts "Hello World" }
 lam.call
 ```
-	
+
 ##Closures?
 * A function passed into another function
