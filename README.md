@@ -24,8 +24,8 @@ end
 ```
 
 ##Blocks vs Procs
-* Procs are objects (aka can be stored in a variable), blocks are not
-* At most one block can appear in an argument list
+* Exactly the same, except...
+* Blocks can't be stored in variables; however, procs can!
 
 ##Procs Examples
 
@@ -51,6 +51,8 @@ p = Proc.new { |x| puts x*2 }
 proc = Proc.new { puts "Hello World" }
 proc.call                     # The body of the Proc object gets executed when called
 ```
+
+###Extra Credit
 
 ##Procs vs Lambdas
 * Lamda's are a different 'flavor' of a vanilla proc
